@@ -1,0 +1,21 @@
+<h1>Movie#index</h1>
+
+<%= form_tag movie_index_path, method: :get do %>
+  <%= text_field_tag :movie, params[:movie],
+    placeholder: 'Enter a movie name' %>
+  <%= text_field_tag :character, params[:character],
+    placeholder: 'Enter a character name' %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<table>
+  <% @movies.each do |movie| %>
+    <td>
+      <tr><%= "(" + movie.year.to_s + ") " + movie.name + " - " %></tr>
+      <tr>
+        <%= link_to 'Show', movie_path(movie) %>
+      </tr><br>
+    </td>
+  <% end %>
+</table>
+

@@ -1,0 +1,10 @@
+<h1>Movie: <%= @movie.name %></h1>
+<table>
+  <b>Characters</b><br>
+  <% @movie.characters.each do |character| %>
+    <td>
+      <tr><%= character.name %></tr><br>
+    </td>
+  <% end %>
+
+</table>
